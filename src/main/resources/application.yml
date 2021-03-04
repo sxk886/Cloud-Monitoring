@@ -1,0 +1,7 @@
+spring:
+  application: '{
+      "Name": "Logging Demo API",
+      "Version": "0.0.1-SNAPSHOT"
+  }'
+
+##

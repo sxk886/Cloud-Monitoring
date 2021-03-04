@@ -1,0 +1,39 @@
+0buildTech=mvn
+build_agent_label=build-pod
+buildContainerName=mvn3jdk8
+buildCmd=mvn package -Dmaven.test.skip
+testCmd=mvn test
+uploadCmd=mvn deploy -Dmaven.test.skip
+nexusIQ=INTL_CA_ONLINEPKG_PRISM
+nexusIqSvcAccount=onlinePkgDefaultServiceAccount
+mvnSettingsXML=onlinePackagingMVNSettings
+enableSonar=false
+enableNexusIQ=false
+kanikoTimeout=1000
+scanImage=true
+# npe gcr details (mandatory).
+gcrProjectId=can-sre-tools-npe-c3ee
+
+
+#fortify options Refer: https://confluence.equifax.com/display/EOA/Fortify+Pipeline+2.X+Documentation
+# REQUIRED
+fortifyAppId=125203
+fortifyJiraProject=OLP
+fortifyUsername=niran.v
+fortifyPatCredentials=onlinePkgFortifyPatCredentials
+fortifySdlcStatusType=development
+fortifyReleaseName=master
+fortifyMicroserviceName=online-packaging-logging
+fortifyEnableBugtrackerJob=false
+fortifySrcExclude=target/surefire-reports/**
+fortifyLangLevel=1.8
+
+# enable auto deployments to npe environment
+appDeploy=true
+npeDeployJobPath=SRE/npe/dev/online-packaging-logging/v2
+
+# Parameter that allows you to set the agent to use for auto-deployment jobs. Used from 20.08.6 (Optional)
+deployAgentLabel=npe-deploy-pod
+
+# Parameter that allows you to set the branch to auto-deploy from. Used from 20.08.6 (Optional)
+deployBranchName=master
